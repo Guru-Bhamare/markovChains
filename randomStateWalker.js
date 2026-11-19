@@ -17,4 +17,4 @@ function multiplyMatrix(currentState, transitionMatrix) {
 for (let i = 1; i <= 10; i++) {
     console.log(currentState);
     currentState = multiplyMatrix(currentState, transitionMatrix);
-}
+}   
