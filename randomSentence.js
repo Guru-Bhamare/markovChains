@@ -2,13 +2,11 @@ const passage = `Once upon a time, in a small village surrounded by beautiful gr
 
 const splitStringIntoArray = function (passage) {
     const splittedString = passage.split(' ')
-
     return splittedString;
 }
 
 const createTransition = function (passage) {
     const transition = {};
-
     const arr = splitStringIntoArray(passage)
 
     for (let i = 0; i < arr.length - 2; i++) {
@@ -29,14 +27,11 @@ const chooseWord = function (property, transition) {
 const generateText = function (passage, transition) {
     const splittedString = splitStringIntoArray(passage);
     const arr = [splittedString[0], splittedString[1]]
-    let property = arr.at(-2).concat(arr.at(-1));
-
 
     for (let i = 0; i < 25; i++) {
+        const property = arr.at(-2).concat(arr.at(-1));
         arr.push(chooseWord(property, transition));
-        property = arr.at(-2).concat(arr.at(-1));
     }
-
     return arr.join(" ");
 }
 
